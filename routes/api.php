@@ -6,7 +6,9 @@ use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\Auth\UserController;
 use App\Http\Controllers\Api\V1\Category\AllCategoriesController;
 use App\Http\Controllers\Api\V1\Category\CreateCategoryController;
+use App\Http\Controllers\Api\V1\Category\DeleteCategoryController;
 use App\Http\Controllers\Api\V1\Category\FilterCategoryController;
+use App\Http\Controllers\Api\V1\Category\UpdateCategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +38,8 @@ Route::prefix('v1/auth/')->group(function () {
 
 Route::prefix('v1/category')->group(function () {
     Route::get('all', AllCategoriesController::class);
-    Route::get('show/{category}', FilterCategoryController::class);
     Route::post('create', CreateCategoryController::class);
+    Route::get('show/{category}', FilterCategoryController::class);
+    Route::post('update/{category}', UpdateCategoryController::class);
+    Route::get('delete/{category}', DeleteCategoryController::class);
 });
