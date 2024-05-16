@@ -13,7 +13,7 @@ class CreateCategoryController extends Controller
     {
         try {
             $category = Category::create($request->validated());
-            if ($category->save()) {
+            if ($category) {
                 return response()->json([
                     'data' => $category,
                     'message' => 'Category stored successfully',

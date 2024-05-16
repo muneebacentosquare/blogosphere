@@ -13,7 +13,7 @@ class RegisterController extends Controller
     {
         try {
             $user = User::create($request->validated());
-            if ($user->save()) {
+            if ($user) {
                 $tokenResult = $user->createToken('Personal Access Token');
                 $token = $tokenResult->plainTextToken;
 
