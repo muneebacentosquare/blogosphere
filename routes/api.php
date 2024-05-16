@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\LogoutController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\Auth\UserController;
+use App\Http\Controllers\Api\V1\Category\AllCategoriesController;
+use App\Http\Controllers\Api\V1\Category\CreateCategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +31,9 @@ Route::prefix('v1/auth/')->group(function () {
         Route::get('user', UserController::class);
         Route::get('logout', LogoutController::class);
     });
+});
+
+Route::prefix('v1/category')->group(function () {
+    Route::get('all', AllCategoriesController::class);
+    Route::post('create', CreateCategoryController::class);
 });
