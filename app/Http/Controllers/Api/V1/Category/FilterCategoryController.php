@@ -3,15 +3,13 @@
 namespace App\Http\Controllers\Api\V1\Category;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Category;
 
 class FilterCategoryController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
+    public function __invoke(Category $category)
     {
-        //
+        $category = Category::whereId($category->id)->get();
+        return response()->json($category);
     }
 }
