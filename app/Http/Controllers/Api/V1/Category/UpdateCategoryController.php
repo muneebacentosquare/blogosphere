@@ -12,9 +12,8 @@ class UpdateCategoryController extends Controller
     public function __invoke(UpdateCategoryRequest $request, Category $category)
     {
         try {
-            $category = $category->update($request->validated());
+            $category->update($request->validated());
             return response()->json([
-                'data' => $category,
                 'message' => 'Category updated successfully'
             ], 200);
         } catch (Exception $ex) {
