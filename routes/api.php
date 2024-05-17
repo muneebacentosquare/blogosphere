@@ -39,7 +39,7 @@ Route::prefix('v1/auth/')->group(function () {
 Route::prefix('v1/category')->group(function () {
     Route::get('all', AllCategoriesController::class);
     Route::post('create', CreateCategoryController::class);
-    Route::get('show/{category}', FilterCategoryController::class);
-    Route::post('update/{category}', UpdateCategoryController::class);
-    Route::get('delete/{category}', DeleteCategoryController::class);
+    Route::get('show/{category:slug}', FilterCategoryController::class);
+    Route::post('update/{category:slug}', UpdateCategoryController::class);
+    Route::get('delete/{category:slug}', DeleteCategoryController::class);
 });

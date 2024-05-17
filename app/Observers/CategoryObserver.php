@@ -2,47 +2,13 @@
 
 namespace App\Observers;
 
+use Illuminate\Support\Str;
 use App\Models\Category;
 
 class CategoryObserver
 {
-    /**
-     * Handle the Category "created" event.
-     */
-    public function created(Category $category): void
+    public function creating(Category $category): void
     {
-        //
-    }
-
-    /**
-     * Handle the Category "updated" event.
-     */
-    public function updated(Category $category): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Category "deleted" event.
-     */
-    public function deleted(Category $category): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Category "restored" event.
-     */
-    public function restored(Category $category): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Category "force deleted" event.
-     */
-    public function forceDeleted(Category $category): void
-    {
-        //
+        $category->slug = Str::slug($category->name) . '-' . random_int(1000, 10000) . '-' . random_int(10, 100);
     }
 }
