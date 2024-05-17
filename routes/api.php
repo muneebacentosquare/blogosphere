@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\V1\Category\FilterCategoryController;
 use App\Http\Controllers\Api\V1\Category\UpdateCategoryController;
 use App\Http\Controllers\Api\V1\Post\AllPostsController;
 use App\Http\Controllers\Api\V1\Post\CreatePostController;
+use App\Http\Controllers\Api\V1\Post\DeletePostController;
 use App\Http\Controllers\Api\V1\Post\FilterPostController;
 use App\Http\Controllers\Api\V1\Post\UpdatePostController;
 use Illuminate\Http\Request;
@@ -53,4 +54,5 @@ Route::prefix('v1/post/')->group(function () {
     Route::post('create', CreatePostController::class);
     Route::get('show/{post}', FilterPostController::class);
     Route::post('update/{post}', UpdatePostController::class);
+    Route::get('delete/{post}', DeletePostController::class);
 });
