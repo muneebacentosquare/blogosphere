@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\V1\Category\CreateCategoryController;
 use App\Http\Controllers\Api\V1\Category\DeleteCategoryController;
 use App\Http\Controllers\Api\V1\Category\FilterCategoryController;
 use App\Http\Controllers\Api\V1\Category\UpdateCategoryController;
+use App\Http\Controllers\Api\V1\Post\AllPostsController;
 use App\Http\Controllers\Api\V1\Post\CreatePostController;
 use App\Http\Controllers\Api\V1\Post\UpdatePostController;
 use Illuminate\Http\Request;
@@ -47,6 +48,7 @@ Route::prefix('v1/category/')->group(function () {
 });
 
 Route::prefix('v1/post/')->group(function () {
+    Route::get('all', AllPostsController::class);
     Route::post('create', CreatePostController::class);
     Route::post('update/{post}', UpdatePostController::class);
 });
