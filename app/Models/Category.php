@@ -22,4 +22,6 @@ class Category extends Model
             get: fn(string $value) => ucfirst($value)
         );
     }
+
+
 }
