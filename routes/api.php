@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\V1\Category\DeleteCategoryController;
 use App\Http\Controllers\Api\V1\Category\FilterCategoryController;
 use App\Http\Controllers\Api\V1\Category\UpdateCategoryController;
 use App\Http\Controllers\Api\V1\Post\CreatePostController;
+use App\Http\Controllers\Api\V1\Post\UpdatePostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,4 +48,5 @@ Route::prefix('v1/category/')->group(function () {
 
 Route::prefix('v1/post/')->group(function () {
     Route::post('create', CreatePostController::class);
+    Route::post('update/{post}', UpdatePostController::class);
 });
