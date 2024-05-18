@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class DeleteCommentController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke(Comment $comment)
     {
         $comment->delete();
