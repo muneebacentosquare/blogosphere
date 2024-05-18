@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\V1\Category\DeleteCategoryController;
 use App\Http\Controllers\Api\V1\Category\FilterCategoryController;
 use App\Http\Controllers\Api\V1\Category\UpdateCategoryController;
 use App\Http\Controllers\Api\V1\Comment\CreateCommentController;
+use App\Http\Controllers\Api\V1\Comment\DeleteCommentController;
 use App\Http\Controllers\Api\V1\Post\AllPostsController;
 use App\Http\Controllers\Api\V1\Post\CreatePostController;
 use App\Http\Controllers\Api\V1\Post\DeletePostController;
@@ -60,4 +61,5 @@ Route::prefix('v1/post/')->group(function () {
 
 Route::prefix('v1/comment/')->group(function () {
     Route::post('create', CreateCommentController::class);
+    Route::get('delete/{comment}', DeleteCommentController::class);
 });
