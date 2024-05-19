@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Post\CreatePostRequest;
 use App\Models\Post;
+use App\Models\Tag;
 use Exception;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -16,6 +17,12 @@ class CreatePostController extends Controller
         try {
             $post = Post::create($request->validated());
             if ($post) {
+                foreach ($request->tags as $tag) {
+                    Tag::create([
+                        'post_id' => $post->id,
+                        'tag' => $tag
+                    ]);
+                }
                 return response()->json([
                     'data' => $post,
                     'message' => 'Post created successfully',

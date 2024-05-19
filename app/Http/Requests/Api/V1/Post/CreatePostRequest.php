@@ -17,7 +17,9 @@ class CreatePostRequest extends FormRequest
             'category_id' => ['required'],
             'name' => ['required'],
             'description' => ['required'],
-            'status' => ['required', 'boolean']
+            'status' => ['required', 'boolean'],
+            'tags' => ['required', 'array'],
+            'tags.*' => ['string'],
         ];
     }
 }
