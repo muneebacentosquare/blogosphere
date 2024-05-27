@@ -1,7 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-function Example() {
+export default function Example() {
     return (
         <div className="container">
             <div className="flex justify-center items-center m-auto">
@@ -14,16 +11,4 @@ function Example() {
             </div>
         </div>
     );
-}
-
-export default Example;
-
-if (document.getElementById('example')) {
-    const Index = ReactDOM.createRoot(document.getElementById("example"));
-
-    Index.render(
-        <React.StrictMode>
-            <Example/>
-        </React.StrictMode>
-    )
 }
