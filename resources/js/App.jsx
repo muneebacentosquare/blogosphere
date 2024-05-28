@@ -7,6 +7,8 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/User/Home";
 import About from "./Pages/User/About";
 import Example from "./Pages/User/Example";
+import Login from "./Pages/Auth/Login";
+import Register from "./Pages/Auth/Register";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -16,6 +18,8 @@ ReactDOM.render(
                 <Route path="/" element={<Home/>}></Route>
                 <Route path="/about" element={<About/>}></Route>
                 <Route path="/example" element={<Example/>}></Route>
+                <Route path="/login" element={<Login/>}></Route>
+                <Route path="/register" element={<Register/>}></Route>
             </Routes>
         </div>
     </BrowserRouter>,
