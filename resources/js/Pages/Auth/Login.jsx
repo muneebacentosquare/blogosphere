@@ -9,7 +9,7 @@ export default function Login() {
     const submitForm = () => {
         http.post('auth/login', { email: email, password: password })
             .then((res) => {
-                setToken(res.data.user, res.data.accessToken); // Call setToken from AuthUser
+                setToken(res.data.user, res.data.accessToken);
             })
             .catch((error) => {
                 console.error(error);
@@ -24,13 +24,13 @@ export default function Login() {
                     <div className="mb-6">
                         <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email
                             Address</label>
-                        <input type="email" id="email" onChange={e => setEmail(e.target.value)}
+                        <input type="email" id="email" autoComplete="email" onChange={e => setEmail(e.target.value)}
                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50"/>
                     </div>
                     <div className="mb-6">
                         <label htmlFor="password"
                                className="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                        <input type="password" id="password" onChange={e => setPassword(e.target.value)}
+                        <input type="password" id="password" autoComplete="current-password" onChange={e => setPassword(e.target.value)}
                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50"/>
                     </div>
                     <div className="flex items-center justify-between">
