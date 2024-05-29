@@ -27,6 +27,11 @@ export default function AuthUser() {
         navigate('/');
     }
 
+    const logout = () => {
+        sessionStorage.clear();
+        navigate('/login');
+    }
+
     const http = axios.create({
         baseURL: "http://blogosphere.app.test/api/v1/",
         headers: {
@@ -39,6 +44,7 @@ export default function AuthUser() {
         token,
         user,
         getToken,
-        http
+        http,
+        logout
     }
 }
