@@ -23,6 +23,7 @@ class LoginController extends Controller
         return response()->json([
             'accessToken' => $token,
             'token_type' => 'Bearer',
+            'user' => Auth::user()
         ]);
     }
 }
