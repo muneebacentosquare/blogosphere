@@ -13,7 +13,7 @@ class LoginController extends Controller
     {
         if (!Auth::attempt($request->validated())) {
             return response()->json([
-                'message' => 'User not found'
+                'message' => 'Invalid credentials, please try again.'
             ], 401);
         }
         $user = $request->user();
