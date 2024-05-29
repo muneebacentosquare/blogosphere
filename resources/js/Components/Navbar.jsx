@@ -1,9 +1,17 @@
 import {Link} from "react-router-dom";
+import AuthUser from "./AuthUser";
 
 export default function Navbar() {
+    const {token, logout} = AuthUser();
+    const logoutUser = () => {
+        if (token !== undefined) {
+            logout()
+        }
+    }
     return (
         <>
-            <nav className="block w-full max-w-screen-xl px-4 py-2 mx-auto text-white bg-white border shadow-md rounded-xl border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+            <nav
+                className="block w-full max-w-screen-xl px-4 py-2 mx-auto text-white bg-white border shadow-md rounded-xl border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
                 <ul className="container flex items-center justify-between mx-auto text-blue-gray-900">
                     <div className="hidden lg:block">
                         <ul className="flex items-center gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -21,6 +29,9 @@ export default function Navbar() {
                                 <Link to="/example">
                                     Example
                                 </Link>
+                            </li>
+                            <li className="p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-900">
+                                <span role="button" onClick={logoutUser}>Logout</span>
                             </li>
                         </ul>
                     </div>
