@@ -35,7 +35,7 @@ export default function AuthUser() {
     const http = axios.create({
         baseURL: "http://blogosphere.app.test/api/v1/",
         headers: {
-            "content-type": "application/json"
+            "content-type": "application/json",
         }
     });
 
