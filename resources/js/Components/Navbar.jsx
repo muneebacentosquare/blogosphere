@@ -1,7 +1,12 @@
 import {Link} from "react-router-dom";
 import AuthUser from "./AuthUser";
+import Login from "../Pages/Auth/Login";
 
 export default function Navbar() {
+    const {getToken} = AuthUser();
+    if (!getToken()) {
+        return <Login/>
+    }
     const {token, logout} = AuthUser();
     const logoutUser = () => {
         if (token !== undefined) {
