@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
 import AuthUser from "./AuthUser";
-import Login from "../Pages/Auth/Login";
-import Guest from "./guest";
 
 export default function Navbar() {
     const {token, logout} = AuthUser();
