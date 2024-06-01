@@ -33,19 +33,15 @@ export default function Navbar() {
                         </ul>
                     </div>
                     <ul className="flex items-center gap-x-1">
-                        {token ?
-                            <li className="p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-900">
-                                <span role="button" onClick={logoutUser}>Logout</span>
-                            </li> :
-                            <>
-                                <li className="hidden px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block">
-                                    <Link to="/login">Login</Link>
-                                </li>
-                                <li className="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block">
-                                    <Link to="/register">Register</Link>
-                                </li>
-                            </>
-                        }
+                        <li className="p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-900">
+                            <span role="button" onClick={logoutUser}>Logout</span>
+                        </li>
+                        <li className="hidden px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block">
+                            <Link to="/login">Login</Link>
+                        </li>
+                        <li className="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block">
+                            <Link to="/register">Register</Link>
+                        </li>
                     </ul>
                 </ul>
             </nav>
